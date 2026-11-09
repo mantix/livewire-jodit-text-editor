@@ -4,13 +4,9 @@
 
 @script
     <script>
-        // Initialize global storage for Jodit instances and listeners if not exists
-        if (!window.joditInstances) {
-            window.joditInstances = {};
-        }
-        if (!window.joditListeners) {
-            window.joditListeners = {};
-        }
+        // Initialize global storage for Jodit instances and listeners
+        window.joditInstances ??= {};
+        window.joditListeners ??= {};
 
         // Cleanup function to remove orphaned instances
         const cleanupOrphanedInstances = () => {
