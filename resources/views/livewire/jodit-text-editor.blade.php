@@ -12,6 +12,31 @@
             window.joditListeners = {};
         }
 
+        // Cleanup function to remove orphaned instances
+        const cleanupOrphanedInstances = () => {
+            Object.keys(window.joditInstances).forEach(id => {
+                const element = document.getElementById(id);
+                if (!element || !element.isConnected) {
+                    // Element no longer exists in DOM, clean up
+                    try {
+                        window.joditInstances[id].destruct();
+                    } catch (e) {
+                        // Ignore errors during destruct of orphaned instances
+                    }
+                    delete window.joditInstances[id];
+                    
+                    // Remove associated listener
+                    if (window.joditListeners[id]) {
+                        window.removeEventListener('update-jodit-content', window.joditListeners[id]);
+                        delete window.joditListeners[id];
+                    }
+                }
+            });
+        };
+
+        // Clean up orphaned instances before initializing
+        cleanupOrphanedInstances();
+
         const joditId = @js($joditId);
         const identifier = @js($identifier);
 
@@ -80,5 +105,8 @@
 
         window.joditListeners[joditId] = updateContentListener;
         window.addEventListener('update-jodit-content', updateContentListener);
+
+        // Also clean up on Livewire navigation
+        document.addEventListener('livewire:navigating', cleanupOrphanedInstances, { once: false });
     </script>
 @endscript
