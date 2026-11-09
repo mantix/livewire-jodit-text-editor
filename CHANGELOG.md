@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## v1.11  - 2026-11-09
+
+### Fixed
+
+- Properly destruct Jodit instances before creating new ones to prevent memory leaks
+- Prevent accumulation of 'update-jodit-content' event listeners on wire:navigate
+
 ## v1.10  - 2026-07-30
 
 ### Added
