@@ -105,8 +105,5 @@
 
         window.joditListeners[joditId] = updateContentListener;
         window.addEventListener('update-jodit-content', updateContentListener);
-
-        // Also clean up on Livewire navigation
-        document.addEventListener('livewire:navigating', cleanupOrphanedInstances, { once: false });
     </script>
 @endscript
