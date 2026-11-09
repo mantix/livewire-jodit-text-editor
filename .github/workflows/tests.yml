@@ -21,7 +21,7 @@ jobs:
     name: Test PHP ${{ matrix.php }} with Laravel ${{ matrix.laravel }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
