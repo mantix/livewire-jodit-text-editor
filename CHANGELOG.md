@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 - Drop support for Laravel 10 and 11; require Laravel 12 or 13 (PHP ^8.2).
 - CI test matrix runs against Laravel 12 and 13 with Orchestra Testbench 10 and 11.
+- Allow Pest 3, 4 or 5 in dev dependencies so CI picks Pest 3 on PHP 8.2, Pest 4 on PHP 8.3, and Pest 5 on PHP 8.4 where compatible.
 
 ## v1.11  - 2026-11-09
 
