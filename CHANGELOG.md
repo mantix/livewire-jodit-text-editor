@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Changed
+
+- Drop support for Laravel 10 and 11; require Laravel 12 or 13 (PHP ^8.2).
+- CI test matrix runs against Laravel 12 and 13 with Orchestra Testbench 10 and 11.
+
 ## v1.11  - 2026-11-09
 
 ### Fixed

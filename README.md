@@ -23,7 +23,7 @@
 ## ✨ Introduction
 A powerful Livewire rich text editor (WYSIWYG) component built on top of Jodit Editor, providing seamless integration with Laravel Livewire.
 
-> To use this package, you must have [Livewire 3](https://livewire.laravel.com/) or [Livewire 4](https://livewire.laravel.com/) installed.
+> To use this package, you must have [Laravel 12](https://laravel.com/) or [Laravel 13](https://laravel.com/), with [Livewire 3](https://livewire.laravel.com/) or [Livewire 4](https://livewire.laravel.com/) installed.
 
 ## 📦 Installation
 Install this package via Composer:
